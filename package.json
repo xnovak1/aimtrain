@@ -1,0 +1,18 @@
+{
+  "name": "aimtrain",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "common"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9",
+    "prettier": "3.3.3"
+  }
+}
