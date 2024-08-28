@@ -6,3 +6,9 @@ export async function createUser(user: NewUser) {
     .values(user)
     .execute()
 }
+
+export async function createUsers(users: NewUser[]) {
+  return await db.insertInto("users")
+    .values(users)
+    .execute()
+}

@@ -35,5 +35,9 @@ export async function readManyGame(data: Partial<Game>) {
     query = query.where("played_at", "=", data.played_at)
   }
 
+  if (data.user_id) {
+    query = query.where("user_id", "=", data.user_id)
+  }
+
   return await query.selectAll().execute()
 }

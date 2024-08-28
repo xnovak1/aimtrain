@@ -6,3 +6,9 @@ export async function createGame(game: NewGame) {
     .values(game)
     .execute()
 }
+
+export async function createGames(games: NewGame[]) {
+  return await db.insertInto("games")
+    .values(games)
+    .execute()
+}

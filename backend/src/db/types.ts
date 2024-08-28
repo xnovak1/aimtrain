@@ -15,8 +15,8 @@ export interface UserTable {
   id: Generated<number>
   name: string
   password: string
-  created_at: ColumnType<Date, string | undefined, never>
-  deleted_at: ColumnType<Date | undefined, null, Date>
+  created_at: ColumnType<Date, Date, never>
+  deleted_at: ColumnType<Date | undefined, Date | null, Date>
 }
 
 export type User = Selectable<UserTable>
@@ -29,7 +29,8 @@ export interface GameTable {
   hits: number
   speed: number
   accuracy: number
-  played_at: ColumnType<Date, string | undefined, never>
+  played_at: ColumnType<Date, Date, never>
+  user_id: number
 }
 
 export type Game = Selectable<GameTable>
