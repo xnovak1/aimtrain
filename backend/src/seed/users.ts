@@ -15,7 +15,7 @@ function createRandomUser(isDeleted: boolean): NewUser {
   }
 }
 
-function createUsers(): User[] {
+function createUsers(): NewUser[] {
   let users = [];
 
   for (let i = 0; i < ACTIVE_USERS; i++) {
@@ -29,5 +29,5 @@ function createUsers(): User[] {
   return users;
 }
 
-const users: User[] = createUsers();
+const users: NewUser[] = createUsers();
 export default users;

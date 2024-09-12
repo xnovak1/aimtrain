@@ -1,4 +1,4 @@
-import { User, Game, NewGame, GameUpdate } from "../db/types"
+import { User, NewUser, Game, NewGame, GameUpdate } from "../db/types"
 import { faker } from "@faker-js/faker"
 import users from "./users"
 
@@ -6,7 +6,7 @@ const USER_GAME_COUNT = 10;
 
 faker.seed(123);
 
-function createRandomGame(user: User): NewGame {
+function createRandomGame(user: NewUser): NewGame {
   return {
     time: faker.number.float(60),
     hits: faker.number.int(90),
@@ -19,7 +19,7 @@ function createRandomGame(user: User): NewGame {
       days: 10,
       refDate: user.created_at
     }),
-    user_id: 0
+    user_id: user.id
   }
 }
 
